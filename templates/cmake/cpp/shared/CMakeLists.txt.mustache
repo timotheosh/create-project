@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.5)
+
+project({{name}})
+
+set(CMAKE_CXX_STANDARD 11)
+set(project_sources ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+# set(project_headers ${CMAKE_CURRENT_SOURCE_DIR}/src/main.hpp)
+add_subdirectory(tests)
+
+add_library({{name}} SHARED ${project_sources})
+
+install(TARGETS {{name}} DESTINATION lib)
+# install(FILES project_headers DESTINATION include)

@@ -1,0 +1,5 @@
+---
+prefix: /usr/local
+template-dir: "{{prefix}}/share/create-project/templates"
+fullname: Anonymous
+email: anonymous@somewhere.com

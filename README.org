@@ -1,0 +1,53 @@
+* create-project
+Program written in [[http://racket-lang.org][Racket]] that creates simple cmake projects for C and C++.
+
+** Why?
+   Why not? I want to learn Racket, and I still tinker, quite a bit in C/C++,
+   what better way to learn than create a project in the language you want to
+   learn.
+
+   I could have done this a lot faster in Python. I hope, someday, I can say the
+   same about a program in reference to Racket.
+
+** Installation
+   Clone this repo
+
+   You need [[https://github.com/rcherrueau/rastache][rastache]]. It is a Racket implementation of the mustache templating
+   engine. You can install it with raco:
+   #+BEGIN_SRC shell
+   raco pkg install "git://github.com/rcherrueau/rastache.git?path=rastache"
+   #+END_SRC
+
+   Place create-project.yaml in /usr/local/etc/ (or somewhere else and update
+   the path for configfile in main.rkt).
+
+   Place the templates directory in /usr/local/share/create-project/templates/
+   (or somewhere else, and update your create-project.yaml file).
+
+   From this repo's root run:
+   #+BEGIN_SRC shell
+   raco exe main.rkt
+   #+END_SRC
+   Then copy main to /usr/local/bin/create-project or somewhere else you fancy.
+
+** Parameters
+   | -l | --lang         | Only accepts c (for creating c projects) or cpp (for C++).         |
+   | -t | --type         | executable, shared, or static                                      |
+   | -d | --project-dir  | Path for where the project ought to be created                     |
+   |    | <project_name> | The name of the project (will create a directory of the same name. |
+   If lang or type are ommitted, you'll be prompted top add them. project-dir is
+   optional, and will create the project directory directly from where you call
+   the program. Project name is mandatory, it will stop if you omit it.
+   I
+
+** Features
+   1. CMake stubs for executable programs, static, and shared libraries.
+   2. main.c(pp) "Hello, World!" file.
+   3. Places [[https://github.com/catchorg/Catch2][catch2]] unit test (header file only) in
+      <project_root>/tests/include/catch.hpp for both C and C++ projects (it
+      can be used to create unit tests for C), and sets up a unittest program
+      and a separate CMakeLists.txt for the unit test program.
+
+** The Future
+   1. Create other projects, for Java (using Maven), Clojure (using Lein and/or
+      boot), and Racket (using raco pkg new).

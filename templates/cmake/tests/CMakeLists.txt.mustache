@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.5)
+
+project({{name}}Tests)
+
+set(CMAKE_CXX_STANDARD 11)
+set(project_sources ${CMAKE_CURRENT_SOURCE_DIR}/src/tests.cpp)
+
+include_directories(
+  "${CMAKE_CURRENT_SOURCE_DIR}/../src"
+  "${CMAKE_CURRENT_SOURCE_DIR}/include")
+
+add_executable({{name}}Tests ${project_sources})
+
+install(TARGETS {{name}}Tests RUNTIME DESTINATION bin)
