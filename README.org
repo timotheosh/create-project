@@ -12,7 +12,12 @@ Program written in [[http://racket-lang.org][Racket]] that creates simple cmake 
 ** Installation
    Clone this repo
 
-   You need [[https://github.com/rcherrueau/rastache][rastache]]. It is a Racket implementation of the mustache templating
+   Install YAML package for Racket with raco (comes with Racket).
+   #+BEGIN_SRC shell
+   raco pkg install yaml
+   #+END_SRC
+
+   Then, you need [[https://github.com/rcherrueau/rastache][rastache]]. It is a Racket implementation of the mustache templating
    engine. You can install it with raco:
    #+BEGIN_SRC shell
    raco pkg install "git://github.com/rcherrueau/rastache.git?path=rastache"
