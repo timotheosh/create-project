@@ -40,10 +40,9 @@ Program written in [[http://racket-lang.org][Racket]] that creates simple cmake 
    | -t | --type         | executable, shared, or static                                      |
    | -d | --project-dir  | Path for where the project ought to be created                     |
    |    | <project_name> | The name of the project (will create a directory of the same name. |
-   If lang or type are ommitted, you'll be prompted top add them. project-dir is
+   If lang or type are ommitted, you'll be prompted to add them. project-dir is
    optional, and will create the project directory directly from where you call
    the program. Project name is mandatory, it will stop if you omit it.
-   I
 
 ** Features
    1. CMake stubs for executable programs, static, and shared libraries.
